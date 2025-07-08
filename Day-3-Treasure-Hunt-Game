@@ -1,0 +1,20 @@
+print("Welcome to Treasure Island.")
+print("Your mission is to find the treasure.")
+find_path = input('You\'er at the cross road. Where do you want to go? \n type "Left" or "Right"\n').lower()
+
+if find_path == "left":
+    choose2=input('You have come to the lake.\n There is a island near the lake. '
+                   'Type "Wait" to wait for the boat or type "Swim" to cross\n').lower()
+    if choose2 == "wait":
+        choose2=input('You left the island unharmed. there are 3 door "red","yellow","blue".\n Which color do you choose?\n ').lower()
+    else:
+        print("OOPS! While you were swimming the crocodiles ate you...")
+    if choose2 == "yellow":
+        print("You found the tresure. You win the game!! :-)")
+    elif choose2 == "red":
+        print("The room is full of fire. You lose the game :-(")
+    elif choose2 == "blue":
+        print("The room has a lion. Your game is over :-(")
+
+else:
+    print("There was a fire. Your Game is over")
