@@ -1,0 +1,33 @@
+print("Welcome to Bengaluru Pizza Corner!")
+size = input("What size pizza do you want? S, M or L: ").upper()
+pepperoni = input("Do you want pepperoni on your pizza? Y or N: ").upper()
+extra_cheese = input("Do you want extra cheese? Y or N: ").upper()
+bill=0
+
+# Users choosing the size of the pizza
+if size == "S":
+    bill+=15
+elif size == "M":
+    bill += 20
+elif size == "L":
+    bill += 25
+else:
+    print("Please check your inputs.")
+
+#users choosing the pepperoni
+if pepperoni == "Y":
+    if size == "S":
+        bill += 2
+    else:
+        bill += 3
+
+#User choosing where they need cheese for the pizza
+if extra_cheese == "Y":
+    if size == "S":
+        if size == "M":
+            if size == "L":
+                bill += 1
+
+
+#printing the final bill
+print(f"Your final bill is Rs.{bill}")
