@@ -1,0 +1,47 @@
+import art
+print(art.logo)
+
+#Create the function to define the userinput
+def add(n1, n2):
+    return n1 + n2
+def sub(n1, n2):
+    return n1 - n2
+def multi(n1, n2):
+    return n1 * n2
+def div(n1, n2):
+    return n1 / n2
+
+#create a dictionary for the operators to get stored
+keys={"+":add,
+      "-":sub,
+      "*":multi,
+      "/":div
+}
+
+#Use dictionary to perform calculation
+print(keys["*"](4,8))
+
+#Taking the user input
+
+
+def calculator():
+    should_continue = True
+    num1 = int(input("Enter the first number: "))
+    while should_continue:
+
+        for i in keys:
+            print(i)
+        choose_the_operation=input("Enter the operation: ")
+        num2=int(input("Enter the second number: "))
+        answer=keys[choose_the_operation](num1,num2)
+        print(f"{num1}{choose_the_operation}{num2}={answer}")
+
+        choose_the_decision=input(f"Type 'y' to continue with the {answer} or Type 'n' to end up with the {answer}\n")
+
+        if choose_the_decision=='y':
+            num1=answer
+        else:
+            should_continue=False
+            print("\n"*20)
+            calculator()
+calculator()
